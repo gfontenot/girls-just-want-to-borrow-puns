@@ -2,3 +2,6 @@
 name = "puns"
 version = "0.0.1"
 authors = [ "Gordon Fontenot <gordon@fonten.io>" ]
+
+[dependencies]
+curl = "0.2"

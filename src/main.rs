@@ -1,14 +1,11 @@
+extern crate curl;
+use curl::http;
+
 mod rhyme;
 use rhyme::*;
 
 fn main() {
-    let rhyme = Rhyme::new(
-        "Heart",
-        1,
-        300,
-        "fq",
-        1,
-    );
-
-    println!("Hello World");
+    let resp = http::handle()
+        .get("http://rhymebrain.com/talk?function=getRhymes&word=heart")
+        .exec().unwrap();
 }
